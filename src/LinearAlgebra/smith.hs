@@ -2,9 +2,9 @@ module LinearAlgebra.Smith
 ( smith
 ) where
 
-  import Data.Matrix as M
-  import Data.Vector as V
-  import Prelude     as P
+import Data.Matrix as M
+import Data.Vector as V
+import Prelude     as P
 
 --[Smith normal form]-----------------------------------------------------------
 
@@ -84,3 +84,9 @@ smallestIndex a = snd $ P.minimum [(abs $ getElem i j a,(i,j))
                                    , getElem i j a /= 0]
                                    where m = nrows a
                                          n = ncols a
+
+--[Misc.]-----------------------------------------------------------------------
+
+-- | for readability (and cos I don't understand monads)
+(-:) :: a -> (a -> b) -> b
+x -: f = f $ x
