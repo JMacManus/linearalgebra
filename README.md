@@ -1,13 +1,12 @@
 # Linear Algebra
 Some linear algebra work done in Haskell.
 
-linalg.hs is a Haskell module extending Data.Matrix with features like Smith normal-form and Gaussian elimination.
+Main project is smith.hs and smith.exe. The idea is to take in input 
 
-matrices.hs is an experiment to remove dependency on Data.Matrix.
+>>> smith [[1,2],[3,4]]
 
-
+and output the smith normal-form of such a matrix.
 
 #TODO
-- create working executables using the module(s).
+- refactor code into a more standard project layout
 - maybe use SMF to implement some kind of crazy group counter.
-- finish working on matrixparser.hs
