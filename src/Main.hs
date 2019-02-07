@@ -10,10 +10,13 @@ import System.Exit
 
 -- TODO change getLine to getArgs and concatenate all args into one, the rest is the same
 
-main = do l <- getLine
+main = do ls <- getArgs
+          let l = concat ls
           let m = parseMatrix l
+          putStrLn "Input:"
           output m
           let s = m >>= maybeSmith
+          putStrLn "Corresponding Smith normal-form:"
           output s
 
 output :: (Show a) =>  Maybe a -> IO ()
@@ -32,6 +35,8 @@ maybeSmith m = return $ smith m
 
 
 invalidArgs = putStrLn msg >> exit where
-    msg = "Invalid arguments" -- TODO, write this up properly for usability
+    msg = "Error: Parse error on input. \n\n" ++
+          "Command should be of the form: \n" ++
+          ">>> smith [[1,2,3],[4,5,6],[7,8,9]]"-- TODO, write this up properly for usability
 
-exit    = exitWith ExitSuccess
+exit = exitWith ExitSuccess
