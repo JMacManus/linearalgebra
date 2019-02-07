@@ -10,6 +10,8 @@ i.e. [[1,2],[3,4]]
 we can allow for {} instead of [] too, possibly.
 -}
 
+-- TODO errors on input of "[[]]"
+
 import Data.Matrix hiding (matrix)
 
 -- | Small parser library
