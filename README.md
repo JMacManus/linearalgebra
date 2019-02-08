@@ -22,8 +22,11 @@ There is a smith.exe program in the \out folder. Place that somewhere and from t
     │ 1 0 │
     │ 0 3 │
     └     ┘
+    
+Find the main algorithm module within src\linearalgebra\smith.hs.
 
 ### TODO
 - refactor code into a more standard project layout
 - maybe use SNF to implement some kind of crazy group counter.
 - Redo matrixparser.hs to be both more general and less wonky.
+- Try make smith.hs more monadic, same with gauss.hs.
